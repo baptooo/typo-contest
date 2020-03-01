@@ -1,6 +1,6 @@
 # Typo contest
 
-Typo contest is a typing speed game, available at []
+Typo contest is a typing speed game, available at [https://typo-contest.surge.sh](https://typo-contest.surge.sh)
 
 ## Install
 

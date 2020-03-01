@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "serve ./public"
+    "start": "serve ./public",
+    "deploy": "surge ./public typo-contest.surge.sh"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "serve": "^11.3.0"
+    "serve": "^11.3.0",
+    "surge": "^0.21.3"
   }
 }
