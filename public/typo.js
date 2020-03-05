@@ -85,6 +85,7 @@ function gameEnd() {
 function next(form, current = null) {
     const line = current.dataset.line;
     let valid = true;
+    let prevData = '';
 
     const onInput = (evt) => {
         blockKeys(evt);
@@ -96,6 +97,7 @@ function next(form, current = null) {
 
         const value = evt.target.value;
         const currentValidState = line.indexOf(value) !== -1;
+        const data = evt.data;
 
         if (value === line) {
             unbind();
@@ -112,10 +114,12 @@ function next(form, current = null) {
         } else if (!valid && currentValidState) {
             current.classList.remove('invalid');
         }
-        if (evt.data === ' ' && valid) {
+        console.log(prevData, data);
+        if (evt.data === ' ' && prevData !== null && valid) {
             onValidWord();
         }
         valid = currentValidState;
+        prevData = data;
     }
     current.focus();
     bind(current, 'input', onInput);
